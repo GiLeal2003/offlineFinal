@@ -1032,5 +1032,4 @@ const prisma = new PrismaClient();
             },
         },
     });
-    const select = await prisma.cliente.findMany();
 })();
