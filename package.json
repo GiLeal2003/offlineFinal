@@ -3,7 +3,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "start": "next start"
+    "start": "next start",
+    "type": "module"
     
   },
   "dependencies": {
@@ -30,8 +31,7 @@
     "@types/node": "20.14.8",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
-    "prisma": "5.19.1",
-    "type": "module"
+    "prisma": "5.19.1"
     
   },
   "engines": {
