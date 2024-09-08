@@ -1,31 +1,122 @@
-import AcmeLogo from '@/app/ui/acme-logo';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import styles from '@/app/ui/home.module.css';
+import Image from 'next/image';
+import '@fontsource/inter';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 
 export default function Page() {
   return (
-    <main className="flex min-h-screen flex-col p-6">
-      <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
-        {/* <AcmeLogo /> */}
-      </div>
-      <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
-        <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
-          <p className={`text-xl text-gray-800 md:text-3xl md:leading-normal`}>
-            <strong>Welcome to Acme.</strong> This is the example for the{' '}
-            <a href="https://nextjs.org/learn/" className="text-blue-500">
-              Next.js Learn Course
-            </a>
-            , brought to you by Vercel.
-          </p>
-          <Link
-            href="/login"
-            className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
-          >
-            <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
-          </Link>
-        </div>
-        <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
-          {/* Add Hero Images Here */}
+    <main className={styles.container}>
+      <div className={styles.root}>
+        <div className={styles.body}>
+          <div className={styles.introducao}>
+            <div className={styles.bemvindo}>Bem-vindo ao <span style={{ color: "#AF2020"}}>Off-Line</span></div>
+            <div className={styles.apresentacao}>Nosso aplicativo foi desenvolvido para oferecer uma solução prática e eficiente para os vendedores dentro do campus Mackenzie.</div>
+            <div className={styles.topicos1}>
+              <div className={styles.bolinha1}>
+                <FontAwesomeIcon icon={faCheck} />
+              </div>
+              <div className={styles.topico1}>Gestão Simplificada de Pedidos: Receba e gerencie pedidos em tempo real, reduzindo erros e melhorando a eficiência do atendimento. Tudo em um só lugar.</div>
+            </div>
+            <div className={styles.topicos1}>
+              <div className={styles.bolinha1}>
+                <FontAwesomeIcon icon={faCheck} />
+              </div>
+              <div className={styles.topico1}>Redução de Filas: Com o sistema de pedidos antecipados, você pode preparar os pedidos com antecedência, diminuindo o tempo de espera dos clientes e evitando filas no seu estabelecimento</div>
+            </div>
+            <div className={styles.topicos1}>
+              <div className={styles.bolinha1}>
+                <FontAwesomeIcon icon={faCheck} />
+              </div>
+              <div className={styles.topico1}>Análise de Vendas: Acompanhe suas vendas e obtenha insights valiosos sobre os produtos mais vendidos e o comportamento dos clientes, ajudando a otimizar seu negócio.</div>
+            </div>
+            <div className={styles.topicos1}>
+              <div className={styles.bolinha1}>
+                <FontAwesomeIcon icon={faArrowRight} />
+              </div>
+              <div className={styles.topico1}>Para acessar o aplicativo mobile clique no botão abaixo.</div>
+              <div className={styles.button}>
+                <Link href="http://localhost:3000/pedido/1paginaInicial"><button className={styles.exit} >Acessar</button></Link>
+              </div>
+            </div>
+          </div>
+          
+          <section className={styles.usuario}>
+            <div className="swiper mySwiper container">
+              <div className="swiper-wrapper content">
+                <div className="swiper-slide card">
+                  <div className={styles.card_content}>
+                    <div className={styles.name_profession}>
+                      <span className={styles.name}>Login</span>
+                      <span className={styles.name}>VENDAS</span>
+                      <span className={styles.profession}>Informe seu usuário e senha</span>
+                    </div>
+                    <label htmlFor="username"></label>
+                    <div className={styles.input}>
+                      <img className={styles.img} src="/user.png" alt="user" />
+                      <input className={styles.username} name="username" placeholder="Digite seu usuário" type="text"/>
+                    </div>
+                    <label htmlFor="senha"></label>
+                    <div className={styles.input}>
+                      <img className={styles.img} src="/lock.png" alt="lock" />
+                      <input id="senha" name="senha" placeholder="Digite sua senha" type="password"/>
+                    </div>
+                    <div className={styles.button}>
+                      <Link href="http://localhost:3000/dashboard"><button className={styles.exit} >Acessar</button></Link>
+                    </div>
+                    <div className={styles.links1}>
+                      <div className={styles.esq}>
+                      <Link href="http://localhost:3000/auxiliares/esqueciSenha">
+                        <button>Esqueci minha senha</button></Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className={styles.usuario}>
+            <div className="swiper mySwiper container">
+              <div className="swiper-wrapper content">
+                <div className="swiper-slide card">
+                  <div className={styles.card_content}>
+                    <div className={styles.name_profession}>
+                      <span className={styles.name}>Login</span>
+                      <span className={styles.name}>GESTÃO</span>
+                      <span className={styles.profession}>Informe seu usuário e senha</span>
+                    </div>
+                    <label htmlFor="username"></label>
+                    <div className={styles.input}>
+                      <img className={styles.img} src="/user.png" alt="user" />
+                      <input className={styles.username} name="username" placeholder="Digite seu usuário" type="text"/>
+                    </div>
+                    <label htmlFor="senha"></label>
+                    <div className={styles.input}>
+                      <img className={styles.img} src="/lock.png" alt="lock" />
+                      <input id="senha" name="senha" placeholder="Digite sua senha" type="password"/>
+                    </div>
+                    <div className={styles.button}>
+                      <Link href="http://localhost:3000/gestaoDashboard"><button className={styles.exit} >Acessar</button></Link>
+                    </div>
+                    <div className={styles.links1}>
+                      <div className={styles.esq}>
+                      <Link href="http://localhost:3000/auxiliares/esqueciSenha">
+                        <button>Esqueci minha senha</button></Link>
+                      </div>
+                      <div className={styles.cad}>
+                      <Link href="http://localhost:3000/auxiliares/cadastroEmpresa">
+                        <button>Cadastre a sua empresa</button></Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </main>
