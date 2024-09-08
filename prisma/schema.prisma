@@ -40,9 +40,9 @@ model Item{
 }
 model Pedido{
   cod Int @id @default(autoincrement())
-  datas DateTime
+  datas DateTime @default(now())
   statusPedido String
-  tipo_Pagamento String
+  tipoPagamento String
   total Decimal
   Estabelecimento Estabelecimento? @relation(fields: [cod_loja], references: [cod])
   cod_loja Int
